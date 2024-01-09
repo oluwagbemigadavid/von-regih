@@ -17,13 +17,14 @@ const Hero = () => {
         <div className="hero__container container">
         <div className="hero__container__nav">
             <a href="">INSTAGRAM</a>
-            <p>GAL VON REIGH</p>
+            <p>GAAL VON REIGH</p>
         </div>
             <div className="hero__container__grid">
                 <div className="hero__container__grid__top-right">
                     <img src={hero_img_one} alt="" />
                 </div>
                 <div className="hero__container__grid__mid-left"><img src={hero_img_two} alt="" /></div>
+                <div className="hero__container__grid__mid-right">Gaal Von Reigh</div>
                 <div className="hero__container__grid__bottom-right"><img src={hero_img_three} alt="" /></div>
             </div>
         </div>

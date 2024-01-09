@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,400;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,900&family=Pacifico&display=swap');
 @import './styles/variables';
 @import './Components/index';
 
@@ -11,5 +12,12 @@
 }
 
 body {
-    background: $bg;
+    background: #000;
+    font-family: 'DM Sans', sans-serif;
 }
+
+/* 
+font-family: 'Bebas Neue', sans-serif;
+font-family: 'DM Sans', sans-serif;
+font-family: 'Pacifico', cursive;
+ */
