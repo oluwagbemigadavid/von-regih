@@ -20,6 +20,11 @@ const Hero = () => {
             <p>GAAL VON REIGH</p>
         </div>
             <div className="hero__container__grid">
+                <div className="hero__container__grid__top-left">
+                    <p>HEIGHT: 185CM</p>
+                    <p>SHOE SIZE: 35</p>
+                    <p>EYE-COLOR: GREEN</p>
+                </div>
                 <div className="hero__container__grid__top-right">
                     <img src={hero_img_one} alt="" />
                 </div>

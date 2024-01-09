@@ -121,9 +121,27 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
-                font-size: 80px;
+                font-size: 160px;
                 font-family: 'Pacifico';
+                font-family: 'Bebas Neue', sans-serif;
                 text-transform: uppercase;
+            }
+            &__top-left {
+                width: 100%;
+                height: 100%;
+                grid-area: top-left;
+                display: flex;
+                flex-direction: column;
+                padding: 20px 20px;
+                justify-content: flex-end;
+                gap: 10px;
+                font-family: 'Bebas Neue', sans-serif;
+                color: rgba(0,0,0, .5);
+                font-size: 24px;
+                p {
+                    width: 100%;
+                    text-align: right;
+                }
             }
         }
     }
