@@ -1,0 +1,15 @@
+@import './styles/variables';
+@import './Components/index';
+
+* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+.container {
+    padding: 0 120px;
+}
+
+body {
+    background: $bg;
+}
