@@ -8,60 +8,7 @@ function App() {
     <>
       <HERO />
       <ABOUT />
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
-      <p>heehe</p>
+      <HERO />
     </>
   )
 }
