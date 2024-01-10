@@ -1,8 +1,22 @@
-import React from 'react'
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+
 
 const About = () => {
+
+    const app = useRef(null);
+  
+  
+    useEffect(() => {
+  
+      gsap.to(app.current, { rotate: 360, duration: 5 })
+  
+    }, [])
+  
   return (
-    <div>About</div>
+    <div className="about">
+        <div ref={app}>Hello World</div>
+    </div>
   )
 }
 
