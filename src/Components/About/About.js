@@ -1,23 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 
 const About = () => {
+  const app = useRef(null);
+  
+  useLayoutEffect(() => {
 
-    const app = useRef(null);
-  
-  
-    useEffect(() => {
-  
-      gsap.to(app.current, { rotate: 360, duration: 5 })
-  
-    }, [])
-  
+    let ctx = gsap.context(() => {
+
+      gsap.to(".square", { rotate: 360, duration: 5 });
+
+    }, app);
+
+    return () => ctx.revert();
+
+  }, [])
   return (
-    <div className="about">
-        <div ref={app}>Hello World</div>
+    <div ref={app} className="about">
+    <div className="square">Hello World</div>
+    <div className="square2">Hello World 2</div>
     </div>
   )
 }
 
-export default About
+export default About;
