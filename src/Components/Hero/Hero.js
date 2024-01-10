@@ -1,7 +1,7 @@
 import React from 'react'
 import hero_img_one from '../../images/sobhan-joodi-PZODE-yoY6g-unsplash.jpg'
 import hero_img_two from '../../images/sobhan-joodi-VAgHOD5OfDk-unsplash.jpg'
-import hero_img_three from '../../images/sobhan-joodi-B2R6itvM0nM-unsplash.jpg'
+import hero_img_three from '../../images/sobhan-joodi-Q7NfeLyUKCg-unsplash.jpg'
 
 const Hero = () => {
   return (
