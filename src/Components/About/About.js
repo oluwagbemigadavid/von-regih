@@ -27,6 +27,22 @@ const About = () => {
   const sections = [...document.querySelectorAll('.about__container__section')]
   console.log(sections)
 
+  const Transform = (section) => {
+    const offsetTop = section.parentElement.offsetTop
+  }
+
+
+  useEffect(() => {
+    const transformScroll = () => {
+
+    }
+    window.addEventListener('scroll', );
+
+    return () => {
+      window.removeEventListener('scroll', );
+    };
+  }, []);
+
   return (
     <div className="about" ref={containerRef}>
       <div className="about__container">
