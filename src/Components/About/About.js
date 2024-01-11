@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import img_one from '../../images/sobhan-joodi-Q7NfeLyUKCg-unsplash.jpg';
 
@@ -24,27 +24,23 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const sections = [...document.querySelectorAll('.about__container')]
-
-  const Transform = (section) => {
-    const offsetTop = section.parentElement.offsetTop;
-    const scrollSection = section.querySelector('.about__container__contents');
-    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-    scrollSection.style.transform =`translate3d(${-(Math.min(percentage,))}vw, 0, 0)`
-  }
 
 
+  useLayoutEffect(() => {
 
-  useEffect(() => {
-    const transformScroll = () => {
-      for(let i = 0; i < sections.length; i++) {
-        Transform(sections[i])
-      }
+    const section = document.querySelector('.about__container')
+  
+    const Transform = () => {
+      const offsetTop = section?.parentElement.offsetTop;
+      const scrollSection = section?.querySelector('.about__container__contents');
+      let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+      const val = percentage < 0 ? 0 : percentage > 600 ? 600 : percentage;
+      scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
     }
-    window.addEventListener('scroll', transformScroll);
+    window.addEventListener('scroll', Transform);
 
     return () => {
-      window.removeEventListener('scroll', transformScroll);
+      window.removeEventListener('scroll', Transform);
     };
   }, []);
 
@@ -52,44 +48,6 @@ const About = () => {
     <div className="about" ref={containerRef}>
       <div className="about__container">
         <div className="about__container__contents">
-          <div className="about__container__section">
-            <div className="about__container__section__img">
-              <div className="img" ref={imgRef}>
-                <div className="img__container"><img src={img_one} alt="" id="img1" /></div>
-                <div className="img__container"><img src={img_one} alt="" id="img2" /></div>
-                <div className="img__container"><img src={img_one} alt="" id="img3" /></div>
-              </div>
-            </div>
-            <div className="about__container__section__info">
-              <div className="about__container__section__info__content">
-                <title>Vogue</title>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                <div className="underlay">vogue</div>
-              </div>
-              <div className="about__container__section__info__tag">
-                Gaal von Reigh
-              </div>
-            </div>
-          </div>
-          <div className="about__container__section">
-            <div className="about__container__section__img">
-              <div className="img" ref={imgRef}>
-                <div className="img__container"><img src={img_one} alt="" id="img1" /></div>
-                <div className="img__container"><img src={img_one} alt="" id="img2" /></div>
-                <div className="img__container"><img src={img_one} alt="" id="img3" /></div>
-              </div>
-            </div>
-            <div className="about__container__section__info">
-              <div className="about__container__section__info__content">
-                <title>Vogue</title>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
-                <div className="underlay">vogue</div>
-              </div>
-              <div className="about__container__section__info__tag">
-                Gaal von Reigh
-              </div>
-            </div>
-          </div>
           <div className="about__container__section">
             <div className="about__container__section__img">
               <div className="img" ref={imgRef}>
