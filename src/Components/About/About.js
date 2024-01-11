@@ -24,22 +24,27 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
 
-  const sections = [...document.querySelectorAll('.about__container__section')]
-  console.log(sections)
+  const sections = [...document.querySelectorAll('.about__container')]
 
   const Transform = (section) => {
-    const offsetTop = section.parentElement.offsetTop
+    const offsetTop = section.parentElement.offsetTop;
+    const scrollSection = section.querySelector('.about__container__contents');
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    scrollSection.style.transform =`translate3d(${-(Math.min(percentage,))}vw, 0, 0)`
   }
+
 
 
   useEffect(() => {
     const transformScroll = () => {
-
+      for(let i = 0; i < sections.length; i++) {
+        Transform(sections[i])
+      }
     }
-    window.addEventListener('scroll', );
+    window.addEventListener('scroll', transformScroll);
 
     return () => {
-      window.removeEventListener('scroll', );
+      window.removeEventListener('scroll', transformScroll);
     };
   }, []);
 
