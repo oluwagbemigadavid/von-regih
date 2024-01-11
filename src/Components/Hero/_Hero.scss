@@ -22,6 +22,9 @@
             margin-left: 120px;
             height: 1px;
             top: 100px;
+            @include respond(tab-port) {
+                top: 50px;
+            }
         }
         &__two{
             width: 1px;
@@ -63,6 +66,11 @@
         max-width: 1440px;
         margin: 0 auto;
         margin-top: Max(-100vh, -863px);
+        &.container {
+            @include respond(tab-port) {
+                padding: 0;
+            }
+        }
         &__nav {
             height: 100px;
             width: 100%;
@@ -70,17 +78,29 @@
             //justify-content: space-between;
             align-items: flex-end;
             line-height: 20px;
+            @include respond(tab-port) {
+                height: 50px;
+                padding: 8px 24px;
+                justify-content: space-between;
+            }
              a {
                 width: 280px;
                 text-decoration: none;
                 text-transform: none;
                 color: #000;
                 font-size: 30px;
+                @include respond(tab-port) {
+                    width: auto;
+                    font-size: 18px;
+                }
              }
              p {
                 font-family: 'Bebas Neue', sans-serif;
                 font-size: 35px;
                 cursor: pointer;
+                @include respond(tab-port) {
+                    font-size: 24px;
+                }
              }
         }
         &__grid {
@@ -93,6 +113,14 @@
                                  'mid-left mid-right'
                                  'bottom-left bottom-right';
             
+            @include respond(tab-port) {
+                grid-template-areas: 'top-right top-right'
+                                     'mid-right mid-right'
+                                     'top-left mid-left'
+                                     'bottom-right bottom-right';
+                grid-template-columns: auto auto;
+                grid-template-rows: 30% 20% 20% 30%;
+            }
             &__top-right , &__mid-left ,&__bottom-right {
                 overflow: hidden;
                 width: 100%;
@@ -129,6 +157,10 @@
                 font-family: 'Pacifico';
                 font-family: 'Bebas Neue', sans-serif;
                 text-transform: uppercase;
+                @include respond(tab-port) {
+                    font-size: 80px;
+                    justify-content: center;
+                }
             }
             &__top-left {
                 width: 100%;
@@ -140,9 +172,16 @@
                 justify-content: flex-end;
                 gap: 10px;
                 font-size: 20px;
+                @include respond(tab-port) {
+                    font-size: 16px;
+                    justify-content: center;
+                }
                 p {
                     width: 100%;
                     text-align: right;
+                    @include respond(tab-port) {
+                        text-align: center;
+                    }
                 }
             }
         }
