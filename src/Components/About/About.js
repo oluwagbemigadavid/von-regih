@@ -57,13 +57,29 @@ const About = () => {
               </div>
             </div>
             <div className="about__container__section__info">
+
+            <div className="about__container__section__info__lines">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
               <div className="about__container__section__info__content">
-                <title>Vogue</title>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <div className="about__container__section__info__content__container">
+                  <div className="about__container__section__info__content__container__text">
+                    <h2>VOUGE</h2>
+                    <p>Manchester, London.</p>
+                  </div>
+                  <p>Lorem ipsum adipisicing eli</p>
+                  <p>Lorem consectetur adipisicing elit</p>
+                  <p>Lorem ipsum adipisicing elit</p>
+                  <p>Lorem eli.</p>
+                </div>
                 <div className="underlay">vogue</div>
               </div>
               <div className="about__container__section__info__tag">
-                Gaal von Reigh
+                <p>Gaal von Reigh</p>
               </div>
             </div>
           </div>

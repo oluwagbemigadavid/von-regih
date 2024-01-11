@@ -43,43 +43,84 @@
                 }
             }
             &__info {
-                width: 80vw;
+                width: 100vw;
                 height: 100%;
                 background: $bg;
                 display: grid;
                 grid-template-columns: 70% 30%;
+                position: relative;
+                &__lines {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    display: flex;
+                    justify-content: space-between;
+                    & > * {
+                        height: 100%;
+                        width: 2px;
+                        background: rgba(0,0,0, .1);
+                    }
+                }
 
                 &__content {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    align-content: center;
                     padding: 10px;
                     position: relative;
                     height: 100%;
-                    title {
-                        font-family: 'Pacifico';
-                        margin-bottom: 40px;
-                        h1 {
-                            font-size: 24px;
-                            margin-bottom: 10px
+                    width: 100%;
+                    &__container {
+                        width: fit-content;
+                        margin-left: 25vw;
+                        &__text {
+                            padding-bottom: 24px;
+                            font-style: italic;
+                            h2 {
+                                font-family: 'Pacifico';
+                                font-size: 36px;
+                            }
+                            p {
+                                color: rgba(0,0,0, .5);
+                                font-size: 16px;
+                                font-style: italic;
+                                font-family: 'DM Sans', sans-serif;
+                                font-weight: 200;
+                            }
                         }
                         p {
-                            color: rgba(0,0,0, .5);
-                            font-size: 16px;
-                            font-style: italic;
+                            font-size: 36px;
                         }
                     }
                     .underlay {
+                        font-family: 'Pacifico';
                         position: absolute;
+                        color: rgba(0,0,0, .2);
+                        font-size: 200px;
+                        font-style: italic;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 280px;
+                        left: -50px;
                     }
                 }
                 &__tag {
-                    color: rgba(0,0,0, .5);
-                    font-size: 60px;
-                    bottom: 200px;
+                    position: absolute;
+                    color: rgba(0,0,0, 2);
+                    height: 100%;
+                    right: -300px;
                     display: flex;
                     justify-content: center;
+                    align-items: center;
+                    p {
+                        transform: rotate(90deg);
+                        font-size: 160px;
+                    }
                 }
             }
         }
