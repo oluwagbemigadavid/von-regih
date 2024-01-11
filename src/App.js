@@ -8,7 +8,7 @@ function App() {
     <>
       <HERO />
       <ABOUT />
-      <ABOUTME />
+      {/* <ABOUTME /> */}
     </>
   )
 }
