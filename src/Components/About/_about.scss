@@ -1,12 +1,19 @@
 .about {
     height: 600vh;
     margin: 0 auto;
+    @include respond(tab-port) {
+        height: fit-content;
+    }
     &__container {
         width: 100%;
         height: 100vh;
         position: sticky;
         top: 0;
         overflow: hidden;
+        @include respond(tab-port) {
+            position: relative;
+            overflow: auto;
+        }
         &__contents {
             height: 100%;
             position: absolute;
@@ -14,11 +21,21 @@
             width: 600vw;
             will-change: transform;
             display: flex;
+            @include respond(tab-port) {
+                will-change: none;
+                width: 100vw;
+                position: relative;
+                flex-direction: column;
+            }
         }
         &__section {
             position: relative;
             height: 100%;
             display: flex;
+            @include respond(tab-port) {
+                flex-direction: column;
+                height: auto;
+            }
             &__img {
                 width: 100vw;
                 height: 100%;
@@ -29,6 +46,9 @@
                     overflow: hidden;
                     display: grid;
                     grid-template-columns: auto auto auto;
+                    @include respond(tab-port) {
+                        grid-template-columns: 1fr;
+                    }
                     &__container {
                         overflow: hidden;
                         width: 100%;
@@ -49,6 +69,9 @@
                 display: grid;
                 grid-template-columns: 70% 30%;
                 position: relative;
+                @include respond(tab-port) {
+                    grid-template-columns: 1fr;
+                }
                 &__lines {
                     position: absolute;
                     width: 100%;
@@ -72,9 +95,16 @@
                     position: relative;
                     height: 100%;
                     width: 100%;
+                    @include respond(tab-port) {
+                        height: 80vh;
+                        padding: 0;
+                    }
                     &__container {
                         width: fit-content;
                         margin-left: 25vw;
+                        @include respond(tab-port) {
+                            margin-left: 24px;
+                        }
                         &__text {
                             padding-bottom: 24px;
                             font-style: italic;
@@ -107,6 +137,11 @@
                         align-items: center;
                         margin-top: 280px;
                         left: -50px;
+                        @include respond(tab-port) {
+                            overflow: hidden;
+                            left: 0;
+
+                        }
                     }
                 }
                 &__tag {
@@ -117,6 +152,9 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    @include respond(tab-port) {
+                        display: none;
+                    }
                     p {
                         transform: rotate(90deg);
                         font-size: 160px;

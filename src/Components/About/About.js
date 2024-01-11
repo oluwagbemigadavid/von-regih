@@ -60,21 +60,22 @@ const About = () => {
 
 
   useLayoutEffect(() => {
-
-    const section = document.querySelector('.about__container')
-  
-    const Transform = () => {
-      const offsetTop = section?.parentElement.offsetTop;
-      const scrollSection = section?.querySelector('.about__container__contents');
-      let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-      const val = percentage < 0 ? 0 : percentage > 500 ? 500 : percentage;
-      scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
+    if(window.innerWidth > 700) {
+        const section = document.querySelector('.about__container')
+    
+        const Transform = () => {
+          const offsetTop = section?.parentElement.offsetTop;
+          const scrollSection = section?.querySelector('.about__container__contents');
+          let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+          const val = percentage < 0 ? 0 : percentage > 500 ? 500 : percentage;
+          scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
+        }
+        window.addEventListener('scroll', Transform);
+    
+        return () => {
+          window.removeEventListener('scroll', Transform);
+        };
     }
-    window.addEventListener('scroll', Transform);
-
-    return () => {
-      window.removeEventListener('scroll', Transform);
-    };
   }, []);
 
   return (
@@ -136,7 +137,7 @@ const About = () => {
               <div className="about__container__section__info__content">
                 <div className="about__container__section__info__content__container">
                   <div className="about__container__section__info__content__container__text">
-                    <h2>VOUGE</h2>
+                    <h2>VERSACE</h2>
                     <p>Manchester, London.</p>
                   </div>
                   <p>Lorem ipsum adipisicing eli</p>
@@ -144,7 +145,7 @@ const About = () => {
                   <p>Lorem ipsum adipisicing elit</p>
                   <p>Lorem eli.</p>
                 </div>
-                <div className="underlay">vogue</div>
+                <div className="underlay">versace</div>
               </div>
               <div className="about__container__section__info__tag">
                 <p>Gaal von Reigh</p>
@@ -171,7 +172,7 @@ const About = () => {
               <div className="about__container__section__info__content">
                 <div className="about__container__section__info__content__container">
                   <div className="about__container__section__info__content__container__text">
-                    <h2>VOUGE</h2>
+                    <h2>NIKE</h2>
                     <p>Manchester, London.</p>
                   </div>
                   <p>Lorem ipsum adipisicing eli</p>
@@ -179,7 +180,7 @@ const About = () => {
                   <p>Lorem ipsum adipisicing elit</p>
                   <p>Lorem eli.</p>
                 </div>
-                <div className="underlay">vogue</div>
+                <div className="underlay">nike</div>
               </div>
               <div className="about__container__section__info__tag">
                 <p>Gaal von Reigh</p>
