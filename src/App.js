@@ -1,4 +1,4 @@
-import { ABOUT, HERO } from "./Components"
+import { ABOUT, ABOUTME, HERO } from "./Components"
 
 
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <HERO />
       <ABOUT />
-      <HERO />
+      <ABOUTME />
     </>
   )
 }
