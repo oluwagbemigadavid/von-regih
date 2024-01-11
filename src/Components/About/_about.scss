@@ -1,20 +1,29 @@
 .about {
-    height: 100%;
+    height: 700vh;
     margin: 0 auto;
     &__container {
-        position: relative;
         width: 100%;
-        height: 100%;
         position: sticky;
-        overflow: hidden;
+        top: 0;
+        &__contents {
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            width: 700vw;
+            will-change: transform;
+            display: flex;
+        }
         &__section {
             position: relative;
-            width: 100%;
-            height: 100%;
+            height: 100vh;
+            display: flex;
             &__img {
+                width: 100vw;
+                height: 100vh;
                 .img {
                     width: 100%;
-                    height: 100vh;
+                    height: 100%;
+            
                     overflow: hidden;
                     display: grid;
                     grid-template-columns: auto auto auto;
@@ -32,12 +41,9 @@
                 }
             }
             &__info {
-                width: 100%;
+                width: 100vw;
                 height: 100%;
-                background-color: #fff;
-                top: 0;
-                left: 100%;
-                position: absolute;
+                background: $bg;
             }
         }
     }
