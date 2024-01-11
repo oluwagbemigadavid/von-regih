@@ -1,5 +1,5 @@
 .about {
-    height: 700vh;
+    height: 600vh;
     margin: 0 auto;
     &__container {
         width: 100%;
@@ -11,16 +11,16 @@
             height: 100%;
             position: absolute;
             top: 0;
-            width: 700vw;
+            width: 600vw;
             will-change: transform;
             display: flex;
-            background: green;
         }
         &__section {
             position: relative;
             height: 100%;
             display: flex;
             &__img {
+                width: 100vw;
                 height: 100%;
                 .img {
                     width: 100%;

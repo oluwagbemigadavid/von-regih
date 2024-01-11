@@ -34,7 +34,7 @@ const About = () => {
       const offsetTop = section?.parentElement.offsetTop;
       const scrollSection = section?.querySelector('.about__container__contents');
       let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
-      const val = percentage < 0 ? 0 : percentage > 600 ? 600 : percentage;
+      const val = percentage < 0 ? 0 : percentage > 500 ? 500 : percentage;
       scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
     }
     window.addEventListener('scroll', Transform);
@@ -48,6 +48,76 @@ const About = () => {
     <div className="about" ref={containerRef}>
       <div className="about__container">
         <div className="about__container__contents">
+          <div className="about__container__section">
+            <div className="about__container__section__img">
+              <div className="img" ref={imgRef}>
+                <div className="img__container"><img src={img_one} alt="" id="img1" /></div>
+                <div className="img__container"><img src={img_one} alt="" id="img2" /></div>
+                <div className="img__container"><img src={img_one} alt="" id="img3" /></div>
+              </div>
+            </div>
+            <div className="about__container__section__info">
+
+            <div className="about__container__section__info__lines">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              <div className="about__container__section__info__content">
+                <div className="about__container__section__info__content__container">
+                  <div className="about__container__section__info__content__container__text">
+                    <h2>VOUGE</h2>
+                    <p>Manchester, London.</p>
+                  </div>
+                  <p>Lorem ipsum adipisicing eli</p>
+                  <p>Lorem consectetur adipisicing elit</p>
+                  <p>Lorem ipsum adipisicing elit</p>
+                  <p>Lorem eli.</p>
+                </div>
+                <div className="underlay">vogue</div>
+              </div>
+              <div className="about__container__section__info__tag">
+                <p>Gaal von Reigh</p>
+              </div>
+            </div>
+          </div>
+          <div className="about__container__section">
+            <div className="about__container__section__img">
+              <div className="img" ref={imgRef}>
+                <div className="img__container"><img src={img_one} alt="" id="img1" /></div>
+                <div className="img__container"><img src={img_one} alt="" id="img2" /></div>
+                <div className="img__container"><img src={img_one} alt="" id="img3" /></div>
+              </div>
+            </div>
+            <div className="about__container__section__info">
+
+            <div className="about__container__section__info__lines">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              <div className="about__container__section__info__content">
+                <div className="about__container__section__info__content__container">
+                  <div className="about__container__section__info__content__container__text">
+                    <h2>VOUGE</h2>
+                    <p>Manchester, London.</p>
+                  </div>
+                  <p>Lorem ipsum adipisicing eli</p>
+                  <p>Lorem consectetur adipisicing elit</p>
+                  <p>Lorem ipsum adipisicing elit</p>
+                  <p>Lorem eli.</p>
+                </div>
+                <div className="underlay">vogue</div>
+              </div>
+              <div className="about__container__section__info__tag">
+                <p>Gaal von Reigh</p>
+              </div>
+            </div>
+          </div>
           <div className="about__container__section">
             <div className="about__container__section__img">
               <div className="img" ref={imgRef}>
