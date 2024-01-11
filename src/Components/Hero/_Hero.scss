@@ -109,6 +109,9 @@
                 text-transform: none;
                 color: #000;
                 font-size: 30px;
+                &:hover {
+                    color: rgba($color: #000000, $alpha: .8);
+                }
                 @include respond(tab-port) {
                     width: auto;
                     font-size: 18px;
@@ -118,6 +121,9 @@
                 font-family: 'Bebas Neue', sans-serif;
                 font-size: 35px;
                 cursor: pointer;
+                &:hover {
+                    color: rgba($color: #000000, $alpha: .8);
+                }
                 @include respond(tab-port) {
                     font-size: 24px;
                 }

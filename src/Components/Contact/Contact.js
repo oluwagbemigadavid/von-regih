@@ -24,29 +24,35 @@ const Contact = () => {
             </div>
             <div className="contact__right">
                 <div className="row">
-                    <div>
+                    <div className='input'>
                         <label htmlFor="">First Name</label>
                         <input type="text" placeholder='Louis'/>
                     </div>
-                    <div>
+                    <div className='input'>
                         <label htmlFor="">Last Name</label>
                         <input type="text" placeholder='Oschrid'/>
                     </div>
                 </div>
-                <div className="row">
+                <div className="row row1">
                     <label htmlFor="">Email</label>
-                    <input type="email" />
+                    <input type="email" placeholder='koningswealth@gmail.com' />
                 </div>
-                <div className="row">
+                <div className="row row1">
                     <label htmlFor="">Instagram Account</label>
-                    <input type="text" />
+                    <input type="text" placeholder='@koningdavid_I' />
                 </div>
-                <div className="row">
+                <div className="row row1">
                     <label htmlFor="">Message</label>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Anything you'd like to tell me?"></textarea>
+                    <textarea name="" id="" cols="30" rows="5" placeholder="Anything you'd like to tell me?"></textarea>
                 </div>
                 <button>Shoot!</button>
             </div>
+
+        <div className="contact__footer">
+            <a href="">Instagram</a>
+            <p>&#169; COPYRIGHT 2024 KONINGSWEALTH@GMAIL.COM</p>
+            <a href="">Gaal von Reigh</a>
+        </div>
         </div>
     </div>
   )
