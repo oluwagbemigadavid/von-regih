@@ -1,4 +1,4 @@
-import { ABOUT, ABOUTME, HERO } from "./Components"
+import { ABOUT, ABOUTME, CONTACT, HERO } from "./Components"
 
 
 
@@ -9,6 +9,7 @@ function App() {
       <HERO />
       <ABOUT />
       {/* <ABOUTME /> */}
+      <CONTACT />
     </>
   )
 }

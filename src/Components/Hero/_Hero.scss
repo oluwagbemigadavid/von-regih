@@ -152,7 +152,11 @@
                 grid-area: top-right;
                 position: sticky;
                 top: 50px;
-                    z-index: 0;
+                z-index: 0;
+                @include respond(tab-port) {
+                    position: relative;
+                    top: 0;
+                }
                 img {
                     width: 100%;
                     object-fit: cover;
@@ -197,12 +201,12 @@
                 font-family: 'Pacifico';
                 font-family: 'Bebas Neue', sans-serif;
                 text-transform: uppercase;
+                background: $bg;
+                position: relative;
+                z-index: 1;
                 @include respond(tab-port) {
                     font-size: 80px;
                     justify-content: center;
-                    background: $bg;
-                    position: relative;
-                    z-index: 1;
                 }
             }
             &__top-left {
