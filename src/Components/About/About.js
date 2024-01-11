@@ -8,6 +8,7 @@ import img_five from '../../images/sobhan-joodi-Q7NfeLyUKCg-unsplash.jpg';
 import img_six from '../../images/sobhan-joodi-PZODE-yoY6g-unsplash.jpg';
 import img_seven from '../../images/sobhan-joodi-VAgHOD5OfDk-unsplash.jpg';
 import img_eight from '../../images/sobhan-joodi-bZqZDxfRGYQ-unsplash.jpg';
+import img_nine from '../../images/sobhan-joodi-H24NwWE0SSE-unsplash (1).jpg';
 
 const About = () => {
   const imgRef = useRef(null);
@@ -87,7 +88,7 @@ const About = () => {
               <div className="img" ref={imgRef}>
                 <div className="img__container"><img src={img_one} alt="" id="img0" /></div>
                 <div className="img__container"><img src={img_two} alt="" id="img1" /></div>
-                <div className="img__container"><img src={img_one} alt="" id="img2" /></div>
+                <div className="img__container"><img src={img_nine} alt="" id="img2" /></div>
               </div>
             </div>
             <div className="about__container__section__info">
@@ -138,7 +139,7 @@ const About = () => {
                 <div className="about__container__section__info__content__container">
                   <div className="about__container__section__info__content__container__text">
                     <h2>VERSACE</h2>
-                    <p>Manchester, London.</p>
+                    <p>Istanbul</p>
                   </div>
                   <p>Lorem ipsum adipisicing eli</p>
                   <p>Lorem consectetur adipisicing elit</p>
@@ -173,7 +174,7 @@ const About = () => {
                 <div className="about__container__section__info__content__container">
                   <div className="about__container__section__info__content__container__text">
                     <h2>NIKE</h2>
-                    <p>Manchester, London.</p>
+                    <p>Berlin, Germany.</p>
                   </div>
                   <p>Lorem ipsum adipisicing eli</p>
                   <p>Lorem consectetur adipisicing elit</p>

@@ -156,13 +156,10 @@
             &__top-right , &__mid-left ,&__bottom-right {
                 overflow: hidden;
                 width: 100%;
-                grid-area: top-right;
-                position: sticky;
-                top: 50px;
-                z-index: 0;
                 @include respond(tab-port) {
                     position: relative;
                     top: 0;
+                    z-index: 1;
                 }
                 img {
                     width: 100%;
@@ -171,6 +168,12 @@
             }
             &__top-right {
                 grid-area: top-right;
+                position: sticky;
+                top: 0px;
+                z-index: 0;
+                @include respond(tab-port) {
+                    top: 50px;
+                }
                 img {
                     margin-top: -250px;
                     @include respond(tab-port) {
@@ -192,6 +195,8 @@
             }
             &__bottom-right {
                 grid-area: bottom-right;
+                position: relative;
+                z-index: 2;
                 img {
                     margin-top: -400px;
                     @include respond(tab-port) {

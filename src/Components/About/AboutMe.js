@@ -4,6 +4,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import imagesLoaded from 'imagesloaded';
 
 const AboutMe = () => {
+
+gsap.registerPlugin(ScrollTrigger);
     const preloadImages = (selector = 'img') => {
         return new Promise((resolve) => {
             // The imagesLoaded library is used to ensure all images (including backgrounds) are fully loaded.
