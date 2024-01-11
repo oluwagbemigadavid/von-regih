@@ -101,7 +101,8 @@
                 padding: 8px 24px;
                 justify-content: space-between;
                 position: fixed;
-                z-index: 99;
+                background: $bg;
+                z-index: 9;
             }
              a {
                 width: 280px;

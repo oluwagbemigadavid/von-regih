@@ -13,6 +13,7 @@
         @include respond(tab-port) {
             position: relative;
             overflow: unset;
+            height: fit-content;
         }
         &__contents {
             height: 100%;
