@@ -50,7 +50,7 @@ const Contact = () => {
 
         <div className="contact__footer">
             <a href="">Instagram</a>
-            <p>&#169; COPYRIGHT 2024 KONINGSWEALTH@GMAIL.COM</p>
+            <p>&#169; COPYRIGHT 2024 koningswealth@gmail.com</p>
             <a href="">Gaal von Reigh</a>
         </div>
         </div>
