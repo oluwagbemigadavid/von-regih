@@ -106,10 +106,10 @@ const About = () => {
                     <h2>VOUGE</h2>
                     <p>Manchester, London.</p>
                   </div>
-                  <p>Lorem ipsum adipisicing eli</p>
-                  <p>Lorem consectetur adipisicing elit</p>
-                  <p>Lorem ipsum adipisicing elit</p>
-                  <p>Lorem eli.</p>
+                  <p>Rain-kissed cobblestones, urban magic,</p>
+                  <p>and Gaal's fierce elegance</p>
+                  <p>redefine style amid</p>
+                  <p>Northern charm.</p>
                 </div>
                 <div className="underlay">vogue</div>
               </div>
@@ -141,10 +141,10 @@ const About = () => {
                     <h2>VERSACE</h2>
                     <p>Istanbul</p>
                   </div>
-                  <p>Lorem ipsum adipisicing eli</p>
-                  <p>Lorem consectetur adipisicing elit</p>
-                  <p>Lorem ipsum adipisicing elit</p>
-                  <p>Lorem eli.</p>
+                  <p>Gaal graces ancient streets,</p>
+                  <p>merging opulence with history.</p>
+                  <p>A tapestry of fashion unfolds beneath</p>
+                  <p>the minaret-studded skyline.</p>
                 </div>
                 <div className="underlay">versace</div>
               </div>
@@ -175,11 +175,11 @@ const About = () => {
                   <div className="about__container__section__info__content__container__text">
                     <h2>NIKE</h2>
                     <p>Berlin, Germany.</p>
-                  </div>
-                  <p>Lorem ipsum adipisicing eli</p>
-                  <p>Lorem consectetur adipisicing elit</p>
-                  <p>Lorem ipsum adipisicing elit</p>
-                  <p>Lorem eli.</p>
+                  </div>  
+                  <p>Gaal's powerful strides echo</p>
+                  <p>through urban energy. In the</p>
+                  <p>heart of Berlin, she embodies</p>
+                  <p>strength, resilience, and athleticism.</p>
                 </div>
                 <div className="underlay">nike</div>
               </div>
