@@ -19,65 +19,42 @@ const About = () => {
   const containerRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger)
   const lenis = new Lenis()
-/* 
+
+
   useEffect(() => {
-    let tl = gsap.timeline();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img0", { scale: 1, duration: 1 })
-            .to("#img1", { scale: 1, duration: 1 })
-            .to("#img2", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
-    const observer1 = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img3", { scale: 1, duration: 1 })
-            .to("#img4", { scale: 1, duration: 1 })
-            .to("#img5", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
-    const observer2 = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img6", { scale: 1, duration: 1 })
-            .to("#img7", { scale: 1, duration: 1 })
-            .to("#img8", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
-
-    observer.observe(imgRef.current);
-    observer1.observe(imgRef2.current);
-    observer2.observe(imgRef3.current);
-
-    // Cleanup the observer when the component unmounts
-    return () => {
-      observer.disconnect()
-      observer1.disconnect()
-      observer2.disconnect()
-    };
-  }, []); */
-
-  const lines = document.querySelectorAll('.about__short');
-  console.log(lines)
-  lines.forEach((line, i) => {
-    gsap.from(line, {
+    const container = document.querySelector('.about__container__contents');
+  
+    let scrollTween = gsap.to(container, {
+      xPercent: -100,
+      x: () => window.innerWidth,
+      ease: "none",
       scrollTrigger: {
-        trigger: line,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: false,
-        markers: true
+        trigger: container,
+        start: "left top",  // Updated to "left top" for horizontal scrolling
+        scrub: true,
       },
-      opacity: .2,
-      stagger: 0.1,
-    })
-  })
-
+    });
+  
+    const lines = document.querySelectorAll('.about__short');
+    console.log(lines);
+  
+    lines.forEach((line, i) => {
+      gsap.from(line, {
+        scrollTrigger: {
+          trigger: line,
+          start: 'left 90%',  // Updated to "left 90%" for horizontal scrolling
+          end: 'left 20%',   // Updated to "left 20%" for horizontal scrolling
+          scrub: true,
+          markers: true,
+          containerAnimation: scrollTween,
+        },
+        opacity: 0.2,
+        stagger: 0.1,
+      });
+    });
+  }, []);
+  
+  
   const raf = (time) => {
     lenis.raf(time)
     requestAnimationFrame(raf);
@@ -223,3 +200,46 @@ const About = () => {
 
 export default About;
 // Machina font
+
+/* 
+  useEffect(() => {
+    let tl = gsap.timeline();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tl.to("#img0", { scale: 1, duration: 1 })
+            .to("#img1", { scale: 1, duration: 1 })
+            .to("#img2", { scale: 1, duration: 1 });
+        }
+      });
+    }, { threshold: 0.3 });
+    const observer1 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tl.to("#img3", { scale: 1, duration: 1 })
+            .to("#img4", { scale: 1, duration: 1 })
+            .to("#img5", { scale: 1, duration: 1 });
+        }
+      });
+    }, { threshold: 0.3 });
+    const observer2 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tl.to("#img6", { scale: 1, duration: 1 })
+            .to("#img7", { scale: 1, duration: 1 })
+            .to("#img8", { scale: 1, duration: 1 });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(imgRef.current);
+    observer1.observe(imgRef2.current);
+    observer2.observe(imgRef3.current);
+
+    // Cleanup the observer when the component unmounts
+    return () => {
+      observer.disconnect()
+      observer1.disconnect()
+      observer2.disconnect()
+    };
+  }, []); */
