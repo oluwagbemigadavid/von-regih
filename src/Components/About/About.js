@@ -9,13 +9,17 @@ import img_six from '../../images/sobhan-joodi-PZODE-yoY6g-unsplash.jpg';
 import img_seven from '../../images/sobhan-joodi-VAgHOD5OfDk-unsplash.jpg';
 import img_eight from '../../images/sobhan-joodi-bZqZDxfRGYQ-unsplash.jpg';
 import img_nine from '../../images/sobhan-joodi-H24NwWE0SSE-unsplash (1).jpg';
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from '@studio-freight/lenis';
 
 const About = () => {
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
   const containerRef = useRef(null);
-
+  gsap.registerPlugin(ScrollTrigger)
+  const lenis = new Lenis()
+/* 
   useEffect(() => {
     let tl = gsap.timeline();
     const observer = new IntersectionObserver(entries => {
@@ -56,7 +60,30 @@ const About = () => {
       observer1.disconnect()
       observer2.disconnect()
     };
-  }, []);
+  }, []); */
+
+  const lines = document.querySelectorAll('.about__short');
+  console.log(lines)
+  lines.forEach((line, i) => {
+    gsap.from(line, {
+      scrollTrigger: {
+        trigger: line,
+        start: 'top 80%',
+        end: 'top 20%',
+        scrub: false,
+        markers: true
+      },
+      opacity: .2,
+      stagger: 0.1,
+    })
+  })
+
+  const raf = (time) => {
+    lenis.raf(time)
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf)
 
 
 
@@ -106,10 +133,10 @@ const About = () => {
                     <h2>VOUGE</h2>
                     <p>Manchester, London.</p>
                   </div>
-                  <p>Rain-kissed cobblestones, urban magic,</p>
-                  <p>and Gaal's fierce elegance</p>
-                  <p>redefine style amid</p>
-                  <p>Northern charm.</p>
+                  <p className="about__short">Rain-kissed cobblestones, urban magic,</p>
+                  <p className="about__short">and Gaal's fierce elegance</p>
+                  <p className="about__short">redefine style amid</p>
+                  <p className="about__short">Northern charm.</p>
                 </div>
                 <div className="underlay">vogue</div>
               </div>
@@ -141,10 +168,10 @@ const About = () => {
                     <h2>VERSACE</h2>
                     <p>Istanbul</p>
                   </div>
-                  <p>Gaal graces ancient streets,</p>
-                  <p>merging opulence with history.</p>
-                  <p>A tapestry of fashion unfolds beneath</p>
-                  <p>the minaret-studded skyline.</p>
+                  <p className="about__short">Gaal graces ancient streets,</p>
+                  <p className="about__short">merging opulence with history.</p>
+                  <p className="about__short">A tapestry of fashion unfolds beneath</p>
+                  <p className="about__short">the minaret-studded skyline.</p>
                 </div>
                 <div className="underlay">versace</div>
               </div>
@@ -176,10 +203,10 @@ const About = () => {
                     <h2>NIKE</h2>
                     <p>Berlin, Germany.</p>
                   </div>  
-                  <p>Gaal's powerful strides echo</p>
-                  <p>through urban energy. In the</p>
-                  <p>heart of Berlin, she embodies</p>
-                  <p>strength, resilience, and athleticism.</p>
+                  <p className="about__short">Gaal's powerful strides echo</p>
+                  <p className="about__short">through urban energy. In the</p>
+                  <p className="about__short">heart of Berlin, she embodies</p>
+                  <p className="about__short">strength, resilience, and athleticism.</p>
                 </div>
                 <div className="underlay">nike</div>
               </div>
