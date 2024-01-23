@@ -10,7 +10,6 @@ import img_seven from '../../images/sobhan-joodi-VAgHOD5OfDk-unsplash.jpg';
 import img_eight from '../../images/sobhan-joodi-bZqZDxfRGYQ-unsplash.jpg';
 import img_nine from '../../images/sobhan-joodi-H24NwWE0SSE-unsplash (1).jpg';
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Lenis from '@studio-freight/lenis';
 
 const About = () => {
   const imgRef = useRef(null);
@@ -18,7 +17,6 @@ const About = () => {
   const imgRef3 = useRef(null);
   const containerRef = useRef(null);
   gsap.registerPlugin(ScrollTrigger)
-  const lenis = new Lenis()
 
 /* 
   useEffect(() => {
@@ -94,14 +92,6 @@ const About = () => {
       observer2.disconnect()
     };
   }, []); 
-  const raf = (time) => {
-    lenis.raf(time)
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf)
-
-
 
   useLayoutEffect(() => {
     if(window.innerWidth > 700) {
