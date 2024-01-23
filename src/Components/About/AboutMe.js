@@ -103,11 +103,13 @@ preloadFonts('lce3oen').then(() => {
 	<div className='aboutme'>
 		<div className="aboutme__container loading container">
 			<div className="content content--left">
-				<h2 className="content__title w600" data-split>
+				<div className="content__title w600" data-split>
 					<h2>About me!</h2>
+                    <h2>
 						🌟Gaal-Von-Reigh🌟
 						Hey, I'm Gaal—more than a model, I'm a vibe. From global runways to offbeat photoshoots, my style is all about breaking norms.
-				</h2>
+                    </h2>
+				</div>
 			</div>
 			<div className="content content--left">
 				<h2 className="content__title content__title--smaller w400" data-split>

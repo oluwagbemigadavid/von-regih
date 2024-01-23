@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
         <div className="hero__container container">
         <div className="hero__container__nav">
-            <a href="">INSTAGRAM</a>
+            <a href="/">INSTAGRAM</a>
             <p>GAAL VON REIGH</p>
         </div>
             <div className="hero__container__grid">

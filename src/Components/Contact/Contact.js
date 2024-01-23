@@ -49,9 +49,9 @@ const Contact = () => {
             </div>
 
         <div className="contact__footer">
-            <a href="">Instagram</a>
+            <a href="/">Instagram</a>
             <p>&#169; COPYRIGHT 2024 Website by David Oluwagbemiga</p>
-            <a href="">Gaal von Reigh</a>
+            <a href="/">Gaal von Reigh</a>
         </div>
         </div>
     </div>

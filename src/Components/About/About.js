@@ -10,13 +10,15 @@ import img_seven from '../../images/sobhan-joodi-VAgHOD5OfDk-unsplash.jpg';
 import img_eight from '../../images/sobhan-joodi-bZqZDxfRGYQ-unsplash.jpg';
 import img_nine from '../../images/sobhan-joodi-H24NwWE0SSE-unsplash (1).jpg';
 import ScrollTrigger from "gsap/ScrollTrigger";
+import SplitType from 'split-type'
 
+
+gsap.registerPlugin(ScrollTrigger)
 const About = () => {
   const imgRef = useRef(null);
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
   const containerRef = useRef(null);
-  gsap.registerPlugin(ScrollTrigger)
 
 /* 
   useEffect(() => {
@@ -52,45 +54,48 @@ const About = () => {
   
   
   useEffect(() => {
-    let tl = gsap.timeline();
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img0", { scale: 1, duration: 1 })
-            .to("#img1", { scale: 1, duration: 1 })
-            .to("#img2", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
-    const observer1 = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img3", { scale: 1, duration: 1 })
-            .to("#img4", { scale: 1, duration: 1 })
-            .to("#img5", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
-    const observer2 = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          tl.to("#img6", { scale: 1, duration: 1 })
-            .to("#img7", { scale: 1, duration: 1 })
-            .to("#img8", { scale: 1, duration: 1 });
-        }
-      });
-    }, { threshold: 0.3 });
+    if ( window.innerWidth > 700 ){
+        
+   let tl = gsap.timeline();
+   const observer = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         tl.to("#img0", { scale: 1, duration: 1 })
+           .to("#img1", { scale: 1, duration: 1 })
+           .to("#img2", { scale: 1, duration: 1 });
+       }
+     });
+   }, { threshold: 0.3 });
+   const observer1 = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         tl.to("#img3", { scale: 1, duration: 1 })
+           .to("#img4", { scale: 1, duration: 1 })
+           .to("#img5", { scale: 1, duration: 1 });
+       }
+     });
+   }, { threshold: 0.3 });
+   const observer2 = new IntersectionObserver(entries => {
+     entries.forEach(entry => {
+       if (entry.isIntersecting) {
+         tl.to("#img6", { scale: 1, duration: 1 })
+           .to("#img7", { scale: 1, duration: 1 })
+           .to("#img8", { scale: 1, duration: 1 });
+       }
+     });
+   }, { threshold: 0.3 });
 
-    observer.observe(imgRef.current);
-    observer1.observe(imgRef2.current);
-    observer2.observe(imgRef3.current);
+   observer.observe(imgRef.current);
+   observer1.observe(imgRef2.current);
+   observer2.observe(imgRef3.current);
 
-    // Cleanup the observer when the component unmounts
-    return () => {
-      observer.disconnect()
-      observer1.disconnect()
-      observer2.disconnect()
-    };
+   // Cleanup the observer when the component unmounts
+   return () => {
+     observer.disconnect()
+     observer1.disconnect()
+     observer2.disconnect()
+   };
+    }
   }, []); 
 
   useLayoutEffect(() => {
@@ -111,6 +116,61 @@ const About = () => {
         };
     }
   }, []);
+
+  
+  useLayoutEffect(() => {
+    const images = document.querySelectorAll('.img__container')
+    const splitType = document.querySelectorAll('.about__short')
+    const textUnderlay = document.querySelectorAll('.underlay')
+    const gsapContext = gsap.context(() => {
+      if (window.innerWidth < 700) {
+        images.forEach((image, i) => {
+          gsap.from(image.querySelectorAll('img'), {
+            scrollTrigger: {
+              trigger: image,
+              start: 'top 80%',
+              end: 'top top',
+              scrub: true,
+            },
+            scale: 5,
+            opacity: 0.8,
+            stagger: 0.5,
+          })
+        })
+        splitType.forEach((char, i) => {
+          const text = new SplitType(char, {types: 'chars, words'})
+          gsap.from(text.words, {
+            scrollTrigger: {
+              trigger: char,
+              start: 'top 70%',
+              end: 'top 30%',
+              scrub: false,
+            },
+            stagger: 0.05,
+            opacity: 0,
+            x: 200,
+            y: 50,
+            duration: 1,
+          })
+        })
+        textUnderlay.forEach((char, i) => {
+          const text = new SplitType(char, {types: 'chars'})
+          gsap.from(text.chars, {
+            scrollTrigger: {
+              trigger: char,
+              start: '50px 50%',
+              end: '50px 10%',
+              scrub: 0.5,
+              markers: true
+            },
+            stagger: 0.05,
+            opacity: 0,
+          })
+        })
+      }
+    }, containerRef)
+    return () => gsapContext.revert()
+  }, [containerRef])
 
   return (
     <div className="about" ref={containerRef}>
@@ -139,10 +199,7 @@ const About = () => {
                     <h2>VOUGE</h2>
                     <p>Manchester, London.</p>
                   </div>
-                  <p className="about__short">Rain-kissed cobblestones, urban magic,</p>
-                  <p className="about__short">and Gaal's fierce elegance</p>
-                  <p className="about__short">redefine style amid</p>
-                  <p className="about__short">Northern charm.</p>
+                  <p className="about__short">Rain-kissed cobblestones, urban magic, <br />and Gaal's fierce elegance <br />redefine style amid <br /></p>
                 </div>
                 <div className="underlay">vogue</div>
               </div>
@@ -174,10 +231,7 @@ const About = () => {
                     <h2>VERSACE</h2>
                     <p>Istanbul</p>
                   </div>
-                  <p className="about__short">Gaal graces ancient streets,</p>
-                  <p className="about__short">merging opulence with history.</p>
-                  <p className="about__short">A tapestry of fashion unfolds beneath</p>
-                  <p className="about__short">the minaret-studded skyline.</p>
+                  <p className="about__short">Gaal graces ancient streets, <br />merging opulence with history. <br />A tapestry of fashion unfolds beneath <br />the minaret-studded skyline.</p>
                 </div>
                 <div className="underlay">versace</div>
               </div>
@@ -209,10 +263,7 @@ const About = () => {
                     <h2>NIKE</h2>
                     <p>Berlin, Germany.</p>
                   </div>  
-                  <p className="about__short">Gaal's powerful strides echo</p>
-                  <p className="about__short">through urban energy. In the</p>
-                  <p className="about__short">heart of Berlin, she embodies</p>
-                  <p className="about__short">strength, resilience, and athleticism.</p>
+                  <p className="about__short">Gaal's powerful strides echo <br />through urban energy. In the <br />heart of Berlin, she embodies <br />strength, resilience, and athleticism. </p>
                 </div>
                 <div className="underlay">nike</div>
               </div>
