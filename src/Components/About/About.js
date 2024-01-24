@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import img_one from '../../images/sobhan-joodi-B2R6itvM0nM-unsplash.jpg';
 import img_two from '../../images/sobhan-joodi-RaFd591Uj24-unsplash.jpg';
@@ -19,6 +19,8 @@ const About = () => {
   const imgRef2 = useRef(null);
   const imgRef3 = useRef(null);
   const containerRef = useRef(null);
+  let tag1S = 0
+  let tag1E = 0
 
 /* 
   useEffect(() => {
@@ -108,6 +110,12 @@ const About = () => {
           let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
           const val = percentage < 0 ? 0 : percentage > 500 ? 500 : percentage;
           scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
+          if(val > 86 && val < 88) {
+            tag1S = window.scrollY
+          } else if (val > 140 && val < 142) {
+            tag1E = window.scrollY
+          }
+          console.log(tag1S, tag1E)
         }
         window.addEventListener('scroll', Transform);
     
@@ -122,6 +130,9 @@ const About = () => {
     const images = document.querySelectorAll('.img__container')
     const splitType = document.querySelectorAll('.about__short')
     const textUnderlay = document.querySelectorAll('.underlay')
+    const tag = document.querySelectorAll('.about__container__section__info__tag')
+    const tag2 = document.querySelectorAll('.tag2')
+    const tag3 = document.querySelectorAll('.tag3')
     const gsapContext = gsap.context(() => {
       if (window.innerWidth < 700) {
         images.forEach((image, i) => {
@@ -143,7 +154,7 @@ const About = () => {
             scrollTrigger: {
               trigger: char,
               start: 'top 70%',
-              end: 'top 30%',
+              end: 'top 0%',
               scrub: false,
             },
             stagger: 0.05,
@@ -161,6 +172,22 @@ const About = () => {
               start: '50px 50%',
               end: '50px 10%',
               scrub: 0.5,
+            },
+            stagger: 0.05,
+            opacity: 0,
+          })
+        })
+      } else {
+        tag.forEach((char, i) => {
+          
+        
+          const text = new SplitType(char, {types: 'chars'})
+          gsap.from(text.chars, {
+            scrollTrigger: {
+              trigger: char,
+              start: `top ${window.scrollY + ( - char.scrollHeight * (i + 1.8))}px`,
+              end:  `top ${window.scrollY - (tag[2].scrollHeight * 2)}px`,
+              scrub: 0.5,
               markers: true
             },
             stagger: 0.05,
@@ -171,6 +198,7 @@ const About = () => {
     }, containerRef)
     return () => gsapContext.revert()
   }, [containerRef])
+  
 
   return (
     <div className="about" ref={containerRef}>
@@ -203,7 +231,7 @@ const About = () => {
                 </div>
                 <div className="underlay">vogue</div>
               </div>
-              <div className="about__container__section__info__tag">
+              <div className="about__container__section__info__tag tag1">
                 <p>Gaal von Reigh</p>
               </div>
             </div>
@@ -233,9 +261,9 @@ const About = () => {
                   </div>
                   <p className="about__short">Gaal graces ancient streets, <br />merging opulence with history. <br />A tapestry of fashion unfolds beneath <br />the minaret-studded skyline.</p>
                 </div>
-                <div className="underlay">versace</div>
+                <div className="underlay underlay2">versace</div>
               </div>
-              <div className="about__container__section__info__tag">
+              <div className="about__container__section__info__tag tag2">
                 <p>Gaal von Reigh</p>
               </div>
             </div>
@@ -267,7 +295,7 @@ const About = () => {
                 </div>
                 <div className="underlay">nike</div>
               </div>
-              <div className="about__container__section__info__tag">
+              <div className="about__container__section__info__tag tag3">
                 <p>Gaal von Reigh</p>
               </div>
             </div>

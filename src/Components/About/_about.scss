@@ -110,10 +110,16 @@
                         margin-left: 25vw;
                         @include respond(tab-port) {
                             margin-left: 24px;
+                            margin-right: 24px;
+                            overflow: hidden;
+                            br {
+                                display: none;
+                            }
                         }
                         &__text {
                             padding-bottom: 24px;
                             font-style: italic;
+                            overflow: hidden;
                             h2 {
                                 font-family: 'Pacifico';
                                 font-size: 36px;
@@ -245,11 +251,6 @@
 	padding-top: 50vh;
     @include respond(tab-port) {
         width: fit-content;
-    }
-    h2 {
-        @include respond(tab-port) {
-            left: 24px !important;
-        }
     }
 }
 

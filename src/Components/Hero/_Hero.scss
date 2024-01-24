@@ -205,6 +205,7 @@
                 }
             }
             &__mid-right {
+                font-kerning: none;
                 grid-area: mid-right;
                 display: flex;
                 align-items: center;

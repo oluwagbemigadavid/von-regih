@@ -85,7 +85,7 @@ const animateWords = el => {
 
 // GSAP Scroll Triggers
 const scroll = () => {
-    [...document.querySelectorAll('[data-split]')].forEach(el => {
+    [...document.querySelectorAll('.content__title')].forEach(el => {
         animateWords(el)
     });
 };
@@ -103,12 +103,10 @@ preloadFonts('lce3oen').then(() => {
 	<div className='aboutme'>
 		<div className="aboutme__container loading container">
 			<div className="content content--left">
-				<div className="content__title w600" data-split>
-					<h2>About me!</h2>
-                    <h2>
+				<div  >
+					<h2 className="content__title w600" data-split>About me! <br />
 						🌟Gaal-Von-Reigh🌟
-						Hey, I'm Gaal—more than a model, I'm a vibe. From global runways to offbeat photoshoots, my style is all about breaking norms.
-                    </h2>
+						Hey, I'm Gaal—more than a model, I'm a vibe. From global runways to offbeat photoshoots, my style is all about breaking norms.</h2>
 				</div>
 			</div>
 			<div className="content content--left">
