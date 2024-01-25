@@ -5,6 +5,7 @@ import hero_img_three from '../../images/sobhan-joodi-Q7NfeLyUKCg-unsplash.jpg'
 import SplitType from 'split-type'
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
+import LazyImage from '../LazyImages'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -68,11 +69,17 @@ const Hero = () => {
                     <p>EYE-COLOR: GREEN</p>
                 </div>
                 <div className="hero__container__grid__top-right">
-                    <img src={hero_img_one} alt="" />
+                  <LazyImage src={hero_img_one} />
                 </div>
-                <div className="hero__container__grid__mid-left hero-img"><img src={hero_img_two} alt="" /></div>
-                <div className="hero__container__grid__mid-right"><p>Gaal Von Reigh</p></div>
-                <div className="hero__container__grid__bottom-right hero-img"><img src={hero_img_three} alt="" /></div>
+                <div className="hero__container__grid__mid-left hero-img">
+                  <LazyImage src={hero_img_two} />
+                </div>
+                <div className="hero__container__grid__mid-right">
+                  <p>Gaal Von Reigh</p>
+                </div>
+                <div className="hero__container__grid__bottom-right hero-img">
+                  <LazyImage src={hero_img_three} />
+                </div>
             </div>
         </div>
     </div>

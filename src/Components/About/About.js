@@ -53,52 +53,49 @@ const About = () => {
       });
     });
   }, []); */
+ 
   
-  
+
   useEffect(() => {
     if ( window.innerWidth > 700 ){
-        
-   let tl = gsap.timeline();
-   const observer = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-       if (entry.isIntersecting) {
-         tl.to("#img0", { scale: 1, duration: 1 })
-           .to("#img1", { scale: 1, duration: 1 })
-           .to("#img2", { scale: 1, duration: 1 });
-       }
-     });
-   }, { threshold: 0.3 });
-   const observer1 = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-       if (entry.isIntersecting) {
-         tl.to("#img3", { scale: 1, duration: 1 })
-           .to("#img4", { scale: 1, duration: 1 })
-           .to("#img5", { scale: 1, duration: 1 });
-       }
-     });
-   }, { threshold: 0.3 });
-   const observer2 = new IntersectionObserver(entries => {
-     entries.forEach(entry => {
-       if (entry.isIntersecting) {
-         tl.to("#img6", { scale: 1, duration: 1 })
-           .to("#img7", { scale: 1, duration: 1 })
-           .to("#img8", { scale: 1, duration: 1 });
-       }
-     });
-   }, { threshold: 0.3 });
+      
+      const tl = gsap.timeline();
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tl.to("#img0, #img1, #img2", { scale: 1, duration: 1 });
+          }
+        });
+      }, { threshold: 0.3 });
 
-   observer.observe(imgRef.current);
-   observer1.observe(imgRef2.current);
-   observer2.observe(imgRef3.current);
+      const observer1 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tl.to("#img3, #img4, #img5", { scale: 1, duration: 1 });
+          }
+        });
+      }, { threshold: 0.3 });
 
-   // Cleanup the observer when the component unmounts
-   return () => {
-     observer.disconnect()
-     observer1.disconnect()
-     observer2.disconnect()
-   };
+      const observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tl.to("#img6, #img7, #img8", { scale: 1, duration: 1 });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(imgRef.current);
+      observer1.observe(imgRef2.current);
+      observer2.observe(imgRef3.current);
+
+      return () => {
+        observer.disconnect();
+        observer1.disconnect();
+        observer2.disconnect();
+      };
     }
-  }, []); 
+  }, [imgRef, imgRef2, imgRef3]);
+
 
   useLayoutEffect(() => {
     if(window.innerWidth > 700) {
@@ -110,12 +107,6 @@ const About = () => {
           let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
           const val = percentage < 0 ? 0 : percentage > 500 ? 500 : percentage;
           scrollSection.style.transform =`translate3d(${-(val)}vw, 0, 0)`
-          if(val > 86 && val < 88) {
-            tag1S = window.scrollY
-          } else if (val > 140 && val < 142) {
-            tag1E = window.scrollY
-          }
-          console.log(tag1S, tag1E)
         }
         window.addEventListener('scroll', Transform);
     
@@ -124,28 +115,25 @@ const About = () => {
         };
     }
   }, []);
-
   
   useLayoutEffect(() => {
     const images = document.querySelectorAll('.img__container')
     const splitType = document.querySelectorAll('.about__short')
     const textUnderlay = document.querySelectorAll('.underlay')
-    const tag = document.querySelectorAll('.about__container__section__info__tag')
-    const tag2 = document.querySelectorAll('.tag2')
-    const tag3 = document.querySelectorAll('.tag3')
     const gsapContext = gsap.context(() => {
       if (window.innerWidth < 700) {
         images.forEach((image, i) => {
           gsap.from(image.querySelectorAll('img'), {
             scrollTrigger: {
               trigger: image,
-              start: 'top 80%',
+              start: 'top 65%',
               end: 'top top',
-              scrub: true,
+              scrub: false,
             },
             scale: 5,
             opacity: 0.8,
             stagger: 0.5,
+            duration: 1
           })
         })
         splitType.forEach((char, i) => {
@@ -177,27 +165,10 @@ const About = () => {
             opacity: 0,
           })
         })
-      } else {
-        tag.forEach((char, i) => {
-          
-        
-          const text = new SplitType(char, {types: 'chars'})
-          gsap.from(text.chars, {
-            scrollTrigger: {
-              trigger: char,
-              start: `top ${window.scrollY + ( - char.scrollHeight * (i + 1.8))}px`,
-              end:  `top ${window.scrollY - (tag[2].scrollHeight * 2)}px`,
-              scrub: 0.5,
-              markers: true
-            },
-            stagger: 0.05,
-            opacity: 0,
-          })
-        })
       }
     }, containerRef)
     return () => gsapContext.revert()
-  }, [containerRef])
+  }, [])
   
 
   return (

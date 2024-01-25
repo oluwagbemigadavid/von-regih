@@ -10,7 +10,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        position: relative;
+        position: absolute;
         pointer-events: none;
         & > * {
             background: #000;
@@ -83,7 +83,7 @@
         // TODO: 4k mixin
         max-width: 1440px;
         margin: 0 auto;
-        margin-top: Max(-100vh, -863px);
+        // margin-top: Max(-100vh, -863px);
         &.container {
             @include respond(tab-port) {
                 padding: 0;
@@ -133,6 +133,7 @@
         &__grid {
             height: 100%;
             width: 100%;
+            overflow: hidden;
             display: grid;
             grid-template-columns: 280px auto;
             grid-template-rows: calc(50% - 100px) 20% 30%;
@@ -153,9 +154,10 @@
                     position: relative;
                 }
             }
-            &__top-right , &__mid-left ,&__bottom-right {
+            &__top-right , &__mid-left , &__bottom-right {
                 overflow: hidden;
                 width: 100%;
+                height: 100%;
                 @include respond(tab-port) {
                     position: relative;
                     top: 0;
@@ -195,7 +197,6 @@
             }
             &__bottom-right {
                 grid-area: bottom-right;
-                position: relative;
                 z-index: 2;
                 img {
                     margin-top: -400px;
